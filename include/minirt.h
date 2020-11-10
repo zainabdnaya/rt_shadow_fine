@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 22:06:47 by zdnaya            #+#    #+#             */
-/*   Updated: 2020/11/09 12:17:50 by zdnaya           ###   ########.fr       */
+/*   Updated: 2020/11/09 11:38:13 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_objects
     double      diameter;
     double      height;
     t_vector    cy_normal;
-    int         wich_objects;
+    int         witch_objects;
     
     struct s_objects   *next;
 }t_objects;
@@ -133,7 +133,7 @@ typedef struct s_minirt
     t_list_lights   *list_light;
     t_list_camera   *list_camera;
 
-    int         wich_object;
+    int         witch_object;
     int         object_number;
     char        *line;
     char        *name;
@@ -248,12 +248,12 @@ void           light_coloration(t_minirt *rt,t_vector *l_norm,double *ratio,t_co
 t_color         ray_Tracing(t_minirt *rt);
 t_color         hit_sphere(t_minirt *rt);
 t_color         hit_objects(t_minirt *rt);
-void            wich_object(t_minirt *rt,double *cmp);
+void            Witch_object(t_minirt *rt,double *cmp);
 void            calcul_data(t_minirt *rt);
 /******************************************************************/
 
 /***********************Linked_List  *******************************/
-t_color         wich_object_color(t_minirt *rt);
+t_color         Witch_object_color(t_minirt *rt);
 void            add_list_back(t_list *(*head), t_list *last);
 t_objects       *copy_spher(t_vector center, double radius, t_color color);
 void            add_objects(t_objects  **objs, t_objects  *new_obj);
@@ -297,7 +297,8 @@ unsigned int ft_strlen(const char *s);
 char         *ft_strjoin(char const *s1, char const *s2);
 /***********************************************************************/
 /*************************Shadows***************************************/
-void wich_shadow(t_minirt *rt);
+    void witch_shadow(t_minirt *rt);
+double       check_shadow(t_minirt *rt);
 void       shadow_objects(t_minirt *rt);
 /******************************************************************/
 

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 09:33:22 by zdnaya            #+#    #+#             */
-/*   Updated: 2020/11/06 10:19:24 by zdnaya           ###   ########.fr       */
+/*   Updated: 2020/11/10 11:28:36 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void config_camera(t_minirt *rt,t_vector look_from,t_vector look_at)
     t_vector u;
     t_vector v;
     t_vector vup = {0, 1, 0};
-    w = vectorSub(look_from,look_at);
+    w = vectorScale(look_at,(-1));
     w = vectorNorme(w);
     u = vectorCross(vup,w);
     u = vectorNorme(u);
